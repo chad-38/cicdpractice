@@ -12,7 +12,6 @@ pipeline {
                 echo "Building the Docker Image..."
                 withCredentials([usernamePassword(credentialsId: 'docker-hub-repo', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
                 sh "echo $PASS | docker login -u $USER --password-stdin"
-                sh 'cd /var/lib/jenkins/workspace/my-cicd-pipeline/cicdpractice/'
                 sh 'docker build -t chad38/demo-app:1.1 .'
                 sh 'docker push chad38/demo-app:1.1'
                 }
