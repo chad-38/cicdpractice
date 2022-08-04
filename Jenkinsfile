@@ -20,7 +20,7 @@ pipeline {
         stage("Removing the content") {
             steps {
                 echo "Removing the residuos"
-                sh 'rm -rf /var/lib/jenkins/workspace/my-cicd-pipeline/cicdpractice/'
+                sh 'rm -rf cicdpractice/'
             }
         }
     }
